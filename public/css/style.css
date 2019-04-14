@@ -1,0 +1,183 @@
+header {
+  overflow: hidden;
+}
+
+.navbar .navbar-brand {
+  color: #4592af;
+}
+
+.navbar .navbar-brand:hover {
+  color: #226089;
+}
+
+.banner {
+  position: relative;
+  z-index: -1;
+  margin: -5px;
+  height: 360px;
+  background: #dddddd center center url('https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/5720/restaurants-list-cover.jpg');
+  background-size: cover;
+  filter: blur(3px);
+}
+
+.search-bar .search-bar-outer {
+  margin: 0 auto;
+  max-width: 680px;
+  background-color: #fce2cf;
+  border-radius: 8px;
+  padding: 20px 30px;
+  border: 0;
+  margin-top: -60px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.search-bar .search-bar-inner h4 {
+  color: #9b4b4b;
+}
+
+.form-control::placeholder {
+  color: #aaaaaa;
+  font-size: 0.8rem;
+}
+
+.btn-major {
+  background-color: #9b4b4b;
+  color: white;
+}
+
+.form-control:focus {
+  box-shadow: none;
+  border-color: #ced4da;
+}
+
+.create-restaurant a {
+  background-color: rgb(209, 146, 146);
+  color: #fff;
+  padding: 10px;
+  border: 1px solid rgb(209, 146, 146);
+  border-radius: 4px;
+  text-decoration: none;
+}
+.create-restaurant a:hover {
+  background-color: #9b4b4b;
+  transition: all linear 0.3s;
+}
+
+.card img{
+  height: 180px;
+}
+
+.card-title{
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+
+.footer-link {
+  margin: 3px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  color: rgb(90, 89, 89);
+  text-decoration: none;
+}
+
+.footer-link:hover {
+  color: #fff;
+  background-color: rgba(37, 119, 212, 0.815);
+  transition: all linear 0.4s;
+}
+
+.footer-button {
+  padding: 2px 7px;
+  margin: 3px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  color: rgb(90, 89, 89);
+}
+
+.footer-button:hover {
+  color: #fff;
+  background-color: rgb(216, 48, 48);
+  transition: all linear 0.3s;
+}
+
+.restaurant-category {
+  color: #666666;
+  font-size: 0.8rem;
+}
+
+.restaurant-show-title {
+  position: relative;
+  top: -100px;
+  color: white;
+  text-align: center;
+  font-size: 3rem;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+form.container {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.row input {
+  padding: 1px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+}
+
+.row textarea {
+  padding: 1px; 
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  height: 90px;
+  outline: none;
+}
+
+#create-button {
+  padding: 5px 40px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+#create-button:hover {
+  background-color: rgba(37, 119, 212, 0.815);
+  color: #fff;
+  transition: all linear 0.2s;
+}
+
+.delete-button {
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.delete-button:hover {
+  color: #fff;
+  background-color: rgb(216, 48, 48);
+  transition: all linear 0.3s;
+}
+
+@media screen and (max-width: 992px) {
+  
+  .card img{
+    height: 115px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  
+  .restaurant-show-title {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  
+  .card img{
+    height: auto;
+  }
+  
+}
