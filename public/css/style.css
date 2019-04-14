@@ -84,7 +84,7 @@ header {
 
 .footer-link:hover {
   color: #fff;
-  background-color: rgba(37, 119, 212, 0.815);
+  background-color: rgba(10, 128, 238, 0.815);
   transition: all linear 0.4s;
 }
 
@@ -143,7 +143,7 @@ form.container {
 }
 
 #create-button:hover {
-  background-color: rgba(37, 119, 212, 0.815);
+  background-color: rgba(10, 128, 238, 0.815);
   color: #fff;
   transition: all linear 0.2s;
 }
@@ -157,6 +157,20 @@ form.container {
 .delete-button:hover {
   color: #fff;
   background-color: rgb(216, 48, 48);
+  transition: all linear 0.3s;
+}
+
+.edit-button {
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  text-decoration: none !important;
+  color:#000;
+}
+
+.edit-button:hover {
+  color: #fff;
+  background-color: rgba(10, 128, 238, 0.815);
   transition: all linear 0.3s;
 }
 
