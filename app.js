@@ -48,6 +48,8 @@ app.use('/restaurants', require('./routes/restaurants'))
 // search router
 app.use('/search', require('./routes/search'))
 
+app.use('/sort', require('./routes/sort'))
+
 
 app.listen(port, () => {
   console.log(`Express server is listening on http://localhost:${port}`)

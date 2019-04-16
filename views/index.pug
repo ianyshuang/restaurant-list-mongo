@@ -18,22 +18,22 @@ block content
   div(class="container mt-5")
     div(class="row mb-3")
       div(class="col-md-10 col-12 mx-auto")
-        div(class="row justify-content-end pr-2")
-          div(class="sort-dropdown mr-4") 排序條件
+        div(class="row justify-content-end pr-3")
+          div(class="sort-dropdown ml-4") 排序條件
             div(class="sort-dropdown-content")
-              a(href="#") Link 1
-              a(href="#") Link 2
-              a(href="#") Link 3
-              a(href="#") Link 4
-          div(class="category-dropdown  mr-4") 依種類篩選
+              a(href="/sort/name?asc=true") 中文名稱升序
+              a(href="/sort/name?asc=false") 中文名稱降序
+              a(href="/sort/name_en?asc=true") 英文名稱A-Z
+              a(href="/sort/name_en?asc=false") 英文名稱Z-A
+              a(href="/sort/rating?asc=true") 評分低到高
+              a(href="/sort/rating?asc=false") 評分高到低
+
+          div(class="category-dropdown  ml-4") 依種類篩選
             div(class="category-dropdown-content")
               a(href="#") Link 1
               a(href="#") Link 2
               a(href="#") Link 3
               a(href="#") Link 4
-          span(class="display-icons")
-            i(class="fas fa-th block-icon")
-            i(class="fas fa-list list-icon")
          
         
     div(class="row")

@@ -63,20 +63,12 @@ header {
   transition: all linear 0.3s;
 }
 
-.display-icons * {
-  padding: 8px;
-  margin-right: 7px;
-  color: #fff;
-  background-color: rgba(114, 86, 86, 0.918);
-  border-radius: 4px;
-}
-
 .sort-dropdown, .category-dropdown {
   display: inline-block;
   position: relative;
   padding: 5px 10px;
   color: #fff;
-  background-color: rgba(114, 86, 86, 0.918);
+  background-color: rgba(150, 98, 98, 0.918);
   border-radius: 4px;
 }
 
@@ -105,7 +97,7 @@ header {
 }
 
 .sort-dropdown-content:hover a:hover, .category-dropdown-content:hover a:hover {
-  background-color: rgba(114, 86, 86, 0.918);
+  background-color: rgba(150, 98, 98, 0.918);
   color: #fff;
   transition: all linear 0.2s;
 }
