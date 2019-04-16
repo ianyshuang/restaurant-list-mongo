@@ -31,7 +31,7 @@ block content
 
         img(class="rounded mx-auto d-block mb-4 w-100" src=`${restaurant.image}` alt=`${restaurant.name}` style="max-width: 600px;")
         
-        form(action=`/restaurants/${restaurant.id}/delete` method="POST" class="text-center")
+        form(action=`/restaurants/${restaurant.id}/delete?_method=DELETE` method="POST" class="text-center")
           a(class="edit-button mx-2" href=`/restaurants/${restaurant.id}/edit`) 編輯此餐廳
           button(class="delete-button mx-2" type="submit") 刪除此餐廳
              

@@ -33,7 +33,7 @@ block content
                   div(class='card-footer text-right')
                     a(class="footer-link" href=`/restaurants/${restaurant.id}/edit`)
                       i(class="fas fa-edit")
-                    form(action=`/restaurants/${restaurant.id}/delete` method="POST" style="display: inline-block;")
+                    form(action=`/restaurants/${restaurant.id}/delete?_method=DELETE` method="POST" style="display: inline-block;")
                       button(class="footer-button" type="submit")
                         i(class="fas fa-trash-alt")
                       

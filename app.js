@@ -5,6 +5,7 @@ const port = process.env.PORT || 3000
 const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
 const path = require('path')
+const methodOverride = require('method-override')
 
 // 載入model
 const Restaurant = require('./models/restaurant')
@@ -25,15 +26,18 @@ db.once('open', () => {
   console.log('connected to mongodb!')
 })
 
-// 設置靜態檔案路徑
+// 設定靜態檔案路徑
 app.use(express.static(path.join(__dirname, 'public')))
 
-// 設置views跟template engine
+// 設定views跟template engine
 app.set('view engine', 'pug')
 app.set('views', path.join(__dirname, 'views'))
 
-//設置body-parser
+// 設定body-parser
 app.use(bodyParser.urlencoded({ extended: true }))
+
+// 設定method-override
+app.use(methodOverride('_method'))
 
 // root router
 app.use('/', require('./routes/root'))

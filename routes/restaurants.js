@@ -3,12 +3,12 @@ const router = express.Router()
 const Restaurant = require('../models/restaurant')
 
 // 新增餐廳的頁面
-router.get('/restaurants/new', (req, res) => {
+router.get('/new', (req, res) => {
   res.render('new')
 })
 
 // 新增餐廳的動作
-router.post('/restaurants', (req, res) => {
+router.post('/', (req, res) => {
   // 新增表單傳過來的餐廳物件
   const restaurant = new Restaurant(req.body)
 
@@ -39,7 +39,7 @@ router.get('/:id/edit', (req, res) => {
 })
 
 // 修改餐廳的動作
-router.post('/:id', (req, res) => {
+router.put('/:id', (req, res) => {
   const updated = req.body
 
   Restaurant.findById(req.params.id, (err, restaurant) => {
@@ -58,7 +58,7 @@ router.post('/:id', (req, res) => {
 })
 
 // 刪除餐廳的動作
-router.post('/:id/delete', (req, res) => {
+router.delete('/:id/delete', (req, res) => {
   Restaurant.findById(req.params.id, (err, restaurant) => {
     if (err) return console.error(err)
     restaurant.remove(err => {
