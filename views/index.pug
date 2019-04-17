@@ -16,7 +16,7 @@ block content
         a(href="/restaurants/new") 點我新增餐廳 Go!
 
   div(class="container mt-5")
-    div(class="row mb-3")
+    div(class="row mb-4")
       div(class="col-md-10 col-12 mx-auto")
         div(class="row justify-content-end pr-3")
           div(class="sort-dropdown ml-4") 排序條件
@@ -30,30 +30,28 @@ block content
 
           div(class="category-dropdown  ml-4") 依種類篩選
             div(class="category-dropdown-content")
-              a(href="#") Link 1
-              a(href="#") Link 2
-              a(href="#") Link 3
-              a(href="#") Link 4
+              each category in categories
+                a(href=`/filter?category=${category}`) #{category}
          
         
     div(class="row")
       div(class="col-md-10 col-12 mx-auto")
-        div(class="card-columns")
-          each restaurant in restaurants
-            a(href=`/restaurants/${restaurant._id}` class="text-secondary")
-                div(class="card mb-3")
-                  img(class="card-img-top" src=`${restaurant.image}` alt=`${restaurant.name}`)
-                  div(class="card-body p-3")
-                    h6(class="card-title mb-1") #{restaurant.name}
-                    div(class="restaurant-category mb-1")
-                      i(class="fas fa-utensils pr-2")  #{restaurant.category}
-                    span(class="badge badge-pill badge-danger font-weight-normal")
-                      | #{restaurant.rating} 
-                      i(class="fas fa-star fa-xs")
-                  div(class='card-footer text-right')
-                    a(class="footer-link" href=`/restaurants/${restaurant.id}/edit`)
-                      i(class="fas fa-edit")
-                    form(action=`/restaurants/${restaurant.id}/delete?_method=DELETE` method="POST" style="display: inline-block;")
-                      button(class="footer-button" type="submit")
-                        i(class="fas fa-trash-alt")
-                      
+          div(class="card-columns")
+            each restaurant in restaurants
+              a(href=`/restaurants/${restaurant._id}` class="text-secondary")
+                  div(class="card mb-3")
+                    img(class="card-img-top" src=`${restaurant.image}` alt=`${restaurant.name}`)
+                    div(class="card-body p-3")
+                      h6(class="card-title mb-1") #{restaurant.name}
+                      div(class="restaurant-category mb-1")
+                        i(class="fas fa-utensils pr-2")  #{restaurant.category}
+                      span(class="badge badge-pill badge-danger font-weight-normal")
+                        | #{restaurant.rating} 
+                        i(class="fas fa-star fa-xs")
+                    div(class='card-footer text-right')
+                      a(class="footer-link" href=`/restaurants/${restaurant.id}/edit`)
+                        i(class="fas fa-edit")
+                      form(action=`/restaurants/${restaurant.id}/delete?_method=DELETE` method="POST" style="display: inline-block;")
+                        button(class="footer-button" type="submit")
+                          i(class="fas fa-trash-alt")
+                        

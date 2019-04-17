@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const Restaurant = require('../models/restaurant')
+const category = require('./category')
 
 // 搜尋餐廳
 router.get('/', (req, res) => {
@@ -15,8 +16,12 @@ router.get('/', (req, res) => {
     ]
   }, (err, restaurants) => {
     if (err) return console.error(err)
-    console.log(restaurants)
-    return res.render('index', { restaurants: restaurants })
+
+    category.then(result => {
+      return res.render('index', { restaurants: restaurants, categories: result })
+    }).catch(err => {
+      console.error(err)
+    })
   })
 })
 

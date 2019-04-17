@@ -66,7 +66,7 @@ header {
 .sort-dropdown, .category-dropdown {
   display: inline-block;
   position: relative;
-  padding: 5px 10px;
+  padding: 5px 13px;
   color: #fff;
   background-color: rgba(150, 98, 98, 0.918);
   border-radius: 4px;
