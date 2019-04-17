@@ -51,7 +51,7 @@ block content
                     div(class='card-footer text-right')
                       a(class="footer-link" href=`/restaurants/${restaurant.id}/edit`)
                         i(class="fas fa-edit")
-                      form(action=`/restaurants/${restaurant.id}/delete?_method=DELETE` method="POST" style="display: inline-block;")
-                        button(class="footer-button" type="submit")
+                      form(action=`/restaurants/${restaurant.id}/delete?_method=DELETE` method="POST" style="display: inline-block;" onsubmit="return confirm('確定刪除嗎？')")
+                        button(class="footer-button delete-button-index" type="submit")
                           i(class="fas fa-trash-alt")
                         

@@ -187,16 +187,20 @@ form.container {
   transition: all linear 0.2s;
 }
 
-.delete-button {
+.delete-button-show {
   padding: 5px 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
 }
 
-.delete-button:hover {
+.delete-button-show:hover {
   color: #fff;
   background-color: rgb(216, 48, 48);
   transition: all linear 0.3s;
+}
+
+.delete-button-index:focus, .delete-button-show:focus {
+  outline: none;
 }
 
 .edit-button {
@@ -212,6 +216,8 @@ form.container {
   background-color: rgba(10, 128, 238, 0.815);
   transition: all linear 0.3s;
 }
+
+
 
 @media screen and (max-width: 992px) {
   
