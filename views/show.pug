@@ -35,3 +35,31 @@ block content
           a(class="edit-button mx-2" href=`/restaurants/${restaurant.id}/edit`) 編輯此餐廳
           button(class="delete-button-show mx-2" type="submit") 刪除此餐廳
              
+        div(class="row")
+          div(class="comment-area mt-3 col-10")
+            div(class="create-comment")
+              h5 新增您的評論
+              form(action=`/restaurants/${restaurant.id}/comment` method="POST" class="ml-0 mt-4")
+                div(class="row py-1")
+                  span(class="col-1") 姓名
+                  input(type="text" name="name" class="col-2" required)
+                div(class="row py-1")
+                  span(class="col-1") 評論
+                  textarea(class="col-8" name="detail" required)
+                div(class="row py-1 mt-2 ml-0")
+                  button(type="submit" class="create-comment-button") 送出評論
+
+            h5(class="mt-4") 評論區
+            div(class="mt-3")
+              div(class="comment-header row mb-2 ml-1 py-1")
+                div(class="col-2") 名字
+                div(class="col-3") 日期
+                div(class="col-6") 評語
+              if comments
+                div(class="comment-content ml-1 pt-1")
+                  each comment in comments
+                    div(class="comment row mb-2 py-1 ml-1")
+                      div(class="col-2 name") #{comment.name}
+                      div(class="col-3 date") #{comment.date}
+                      div(class="col-6 detail") #{comment.detail}
+              

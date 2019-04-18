@@ -217,7 +217,42 @@ form.container {
   transition: all linear 0.3s;
 }
 
+.comment-area h5 {
+  color: #777;
+}
 
+.comment-header {
+  color: #fff;
+  background-color: #555;
+  text-align: center;
+  border-radius: 4px;
+}
+
+.comment-content {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.comment-content div {
+  text-align: center;
+  color: #666;
+}
+
+.comment-content .detail {
+  text-align: justify;
+}
+
+.create-comment-button {
+  padding: 5px;
+  background-color: #555;
+  color: #fff;
+  border-radius: 4px;
+}
+
+.create-comment-button:hover {
+  background-color: rgba(10, 128, 238, 0.815);
+  transition: all linear 0.2s;
+}
 
 @media screen and (max-width: 992px) {
   

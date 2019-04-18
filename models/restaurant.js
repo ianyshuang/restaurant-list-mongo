@@ -34,7 +34,14 @@ const restaurantSchema = new Schema({
   description: {
     type: String,
     required: true
-  }
+  },
+  comments: [
+    {
+      name: { type: String, required: true },
+      date: { type: Date, default: Date.now },
+      detail: { type: String, required: true }
+    }
+  ]
 })
 
 module.exports = mongoose.model('Restaurant', restaurantSchema)

@@ -2,6 +2,17 @@ const express = require('express')
 const router = express.Router()
 const Restaurant = require('../models/restaurant')
 
+function getFormattedDates(comments) {
+  const dates = []
+  for (let i = 0; i < comments.length; i++) {
+    const year = comments[i].date.getFullYear()
+    const month = comments[i].date.getMonth() + 1
+    const date = comments[i].date.getDate()
+    dates.push(`${year}-${month}-${date}`)
+  }
+  return dates
+}
+
 // 新增餐廳的頁面
 router.get('/new', (req, res) => {
   res.render('new')
@@ -26,7 +37,24 @@ router.post('/', (req, res) => {
 router.get('/:id', (req, res) => {
   Restaurant.findById(req.params.id, (err, restaurant) => {
     if (err) return console.error(err)
-    return res.render('show', { restaurant: restaurant })
+
+    const formattedComments = []
+    if (restaurant.comments.length !== 0) {
+      const formattedDates = getFormattedDates(restaurant.comments)
+
+      for (let i = 0; i < restaurant.comments.length; i++) {
+        formattedComments.push({
+          name: restaurant.comments[i].name,
+          date: formattedDates[i],
+          detail: restaurant.comments[i].detail
+        })
+      }
+
+      return res.render('show', { restaurant: restaurant, comments: formattedComments })
+    } else {
+      return res.render('show', { restaurant: restaurant })
+    }
+
   })
 })
 
@@ -66,6 +94,17 @@ router.delete('/:id/delete', (req, res) => {
       return res.redirect('/')
     })
   })
+})
+
+// 增加留言的動作
+router.post('/:id/comment', (req, res) => {
+  const comment = req.body
+  Restaurant.findByIdAndUpdate(req.params.id,
+    { $push: { comments: comment } },
+    (err, restaurant) => {
+      if (err) return console.error(err)
+      return res.redirect(`/restaurants/${restaurant.id}`)
+    })
 })
 
 module.exports = router
