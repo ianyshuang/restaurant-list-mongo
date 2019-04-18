@@ -10,20 +10,20 @@
 
 ## Screenshots
 - 首頁: 點擊卡片上半部可進入詳細頁面，點擊下半部左邊按鈕可到達編輯頁面，點擊下半部右邊按鈕可刪除
-![](https://boygeniusreport.files.wordpress.com/2019/03/avengers-endgame-poster-top-half.jpg?quality=98&strip=all)
+![](./public/images/index1.png)
 ![](./public/images/index2.png)
 
 - 新增: 點下首頁的「點我新增餐廳 Go !」，進到新增頁面
-![./public/images/new.png]
+![](./public/images/new.png)
 
 - 排序: 滑鼠移至排序條件將出現下拉選單，點選要排序的條件
-![./public/images/sort.png]
+![](./public/images/sort.png)
 
 - 篩選: 滑鼠移至篩選條件將出現下拉選單，點選要篩選的餐廳種類
-![./public/images/filter.png]
+![](./public/images/filter.png)
 
 - 刪除前出現確認刪除對話框
-![./public/images/delete-confirm.png]
+![](./public/images/delete-confirm.png)
 
 - 每個餐廳頁面下方可新增留言至評論區，將自動生成時間
-![./public/comment.png]
+![](./public/comment.png)
