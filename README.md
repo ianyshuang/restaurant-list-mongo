@@ -26,4 +26,4 @@
 ![](./public/images/delete-confirm.png)
 
 - 每個餐廳頁面下方可新增留言至評論區，將自動生成時間
-![](./public/comment.png)
+![](./public/images/comment.png)
