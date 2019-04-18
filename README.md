@@ -10,7 +10,7 @@
 
 ## Screenshots
 - 首頁: 點擊卡片上半部可進入詳細頁面，點擊下半部左邊按鈕可到達編輯頁面，點擊下半部右邊按鈕可刪除
-![./public/images/index1.png]
+![https://boygeniusreport.files.wordpress.com/2019/03/avengers-endgame-poster-top-half.jpg?quality=98&strip=all]
 ![./public/images/index2.png]
 
 - 新增: 點下首頁的「點我新增餐廳 Go !」，進到新增頁面
