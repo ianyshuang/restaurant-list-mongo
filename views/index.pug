@@ -21,12 +21,12 @@ block content
         div(class="row justify-content-end pr-3")
           div(class="sort-dropdown ml-4") 排序條件
             div(class="sort-dropdown-content")
-              a(href="/sort/name?asc=true") 中文名稱升序
-              a(href="/sort/name?asc=false") 中文名稱降序
-              a(href="/sort/name_en?asc=true") 英文名稱A-Z
-              a(href="/sort/name_en?asc=false") 英文名稱Z-A
-              a(href="/sort/rating?asc=true") 評分低到高
-              a(href="/sort/rating?asc=false") 評分高到低
+              a(href="/sort/name?order=asc") 中文名稱升序
+              a(href="/sort/name?order=desc") 中文名稱降序
+              a(href="/sort/name_en?order=asc") 英文名稱A-Z
+              a(href="/sort/name_en?order=desc") 英文名稱Z-A
+              a(href="/sort/rating?order=asc") 評分低到高
+              a(href="/sort/rating?order=desc") 評分高到低
 
           div(class="category-dropdown  ml-4") 依種類篩選
             div(class="category-dropdown-content")
@@ -36,22 +36,23 @@ block content
         
     div(class="row")
       div(class="col-md-10 col-12 mx-auto")
-          div(class="card-columns")
+          div(class="card-columns row")
             each restaurant in restaurants
-              a(href=`/restaurants/${restaurant._id}` class="text-secondary")
-                  div(class="card mb-3")
-                    img(class="card-img-top" src=`${restaurant.image}` alt=`${restaurant.name}`)
-                    div(class="card-body p-3")
-                      h6(class="card-title mb-1") #{restaurant.name}
-                      div(class="restaurant-category mb-1")
-                        i(class="fas fa-utensils pr-2")  #{restaurant.category}
-                      span(class="badge badge-pill badge-danger font-weight-normal")
-                        | #{restaurant.rating} 
-                        i(class="fas fa-star fa-xs")
-                    div(class='card-footer text-right')
-                      a(class="footer-link" href=`/restaurants/${restaurant.id}/edit`)
-                        i(class="fas fa-edit")
-                      form(action=`/restaurants/${restaurant.id}/delete?_method=DELETE` method="POST" style="display: inline-block;" onsubmit="return confirm('確定刪除嗎？')")
-                        button(class="footer-button delete-button-index" type="submit")
-                          i(class="fas fa-trash-alt")
-                        
+              div(class="col-4")
+                a(href=`/restaurants/${restaurant._id}` class="text-secondary")
+                    div(class="card mb-3")
+                      img(class="card-img-top" src=`${restaurant.image}` alt=`${restaurant.name}`)
+                      div(class="card-body p-3")
+                        h6(class="card-title mb-1") #{restaurant.name}
+                        div(class="restaurant-category mb-1")
+                          i(class="fas fa-utensils pr-2")  #{restaurant.category}
+                        span(class="badge badge-pill badge-danger font-weight-normal")
+                          | #{restaurant.rating} 
+                          i(class="fas fa-star fa-xs")
+                      div(class='card-footer text-right')
+                        a(class="footer-link" href=`/restaurants/${restaurant.id}/edit`)
+                          i(class="fas fa-edit")
+                        form(action=`/restaurants/${restaurant.id}/delete?_method=DELETE` method="POST" style="display: inline-block;" onsubmit="return confirm('確定刪除嗎？')")
+                          button(class="footer-button delete-button-index" type="submit")
+                            i(class="fas fa-trash-alt")
+                          
