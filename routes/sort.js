@@ -1,13 +1,14 @@
 const express = require('express')
 const router = express.Router()
 const Restaurant = require('../models/restaurant')
-const category = require('./category')
+const category = require('./category') // 載入 category.exec()回傳的Promise
 
 function getOrder(order) {
   return (order === 'true') ? 'asc' : 'desc'
 }
 
 router.get('/name', (req, res) => {
+  // 設定是'asc' / 'desc'
   const order = getOrder(req.query.asc)
   Restaurant.find().sort({ name: order }).exec((err, restaurants) => {
     if (err) return console.error(err)

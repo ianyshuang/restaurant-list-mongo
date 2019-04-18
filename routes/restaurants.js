@@ -2,6 +2,7 @@ const express = require('express')
 const router = express.Router()
 const Restaurant = require('../models/restaurant')
 
+// 傳入comments來轉換裡面的date format 並回傳
 function getFormattedDates(comments) {
   const dates = []
   for (let i = 0; i < comments.length; i++) {
@@ -37,11 +38,11 @@ router.post('/', (req, res) => {
 router.get('/:id', (req, res) => {
   Restaurant.findById(req.params.id, (err, restaurant) => {
     if (err) return console.error(err)
-
-    const formattedComments = []
+    // 如果有comments
     if (restaurant.comments.length !== 0) {
+      // 建立一個新的formattedComments物件傳給template
+      const formattedComments = []
       const formattedDates = getFormattedDates(restaurant.comments)
-
       for (let i = 0; i < restaurant.comments.length; i++) {
         formattedComments.push({
           name: restaurant.comments[i].name,
@@ -49,9 +50,9 @@ router.get('/:id', (req, res) => {
           detail: restaurant.comments[i].detail
         })
       }
-
       return res.render('show', { restaurant: restaurant, comments: formattedComments })
     } else {
+      // 若是沒有comments就只傳restaurant
       return res.render('show', { restaurant: restaurant })
     }
 
@@ -99,10 +100,12 @@ router.delete('/:id/delete', (req, res) => {
 // 增加留言的動作
 router.post('/:id/comment', (req, res) => {
   const comment = req.body
+  // 依照id尋找餐廳，並將comment push到comments這個屬性的array裡
   Restaurant.findByIdAndUpdate(req.params.id,
     { $push: { comments: comment } },
     (err, restaurant) => {
       if (err) return console.error(err)
+      // 導回 show page
       return res.redirect(`/restaurants/${restaurant.id}`)
     })
 })
