@@ -51,8 +51,6 @@ app.use('/search', require('./routes/search'))
 // sort router
 app.use('/sort', require('./routes/sort'))
 
-// filter router
-app.use('/filter', require('./routes/filter'))
 
 app.listen(port, () => {
   console.log(`Express server is listening on http://localhost:${port}`)
