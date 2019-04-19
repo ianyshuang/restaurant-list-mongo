@@ -19,19 +19,35 @@ block content
     div(class="row mb-4")
       div(class="col-md-10 col-12 mx-auto")
         div(class="row justify-content-end pr-3")
-          div(class="sort-dropdown ml-4") 排序條件
-            div(class="sort-dropdown-content")
-              a(href="/sort/name?order=asc") 中文名稱升序
-              a(href="/sort/name?order=desc") 中文名稱降序
-              a(href="/sort/name_en?order=asc") 英文名稱A-Z
-              a(href="/sort/name_en?order=desc") 英文名稱Z-A
-              a(href="/sort/rating?order=asc") 評分低到高
-              a(href="/sort/rating?order=desc") 評分高到低
-
-          div(class="category-dropdown  ml-4") 依種類篩選
-            div(class="category-dropdown-content")
+          form(action="/sort")
+            select(name="sort" class="mr-3" style="height: 35px")
+              option(selected disabled) 排序條件
+              option(value="{\"condition\": \"name\", \"order\": \"asc\"}") 中文名稱升序
+              option(value="{\"condition\": \"name\", \"order\": \"desc\"}") 中文名稱降序
+              option(value="{\"condition\": \"name_en\", \"order\": \"asc\"}") 英文名稱A-Z
+              option(value="{\"condition\": \"name_en\", \"order\": \"desc\"}") 英文名稱Z-A
+              option(value="{\"condition\": \"rating\", \"order\": \"asc\"}") 評分低到高
+              option(value="{\"condition\": \"rating\", \"order\": \"desc\"}") 評分高到低
+            
+            select(name="filter" class="mr-3" style="height: 35px")
+              option(selected disabled) 種類查詢
               each category in categories
-                a(href=`/filter?category=${category}`) #{category}
+                option(value=`${category}`) #{category}
+            
+            button(type="submit" id="sort-button") 送出
+          //- div(class="sort-dropdown ml-4") 排序條件
+          //-   div(class="sort-dropdown-content")
+          //-     a(href="/sort/name?order=asc") 中文名稱升序
+          //-     a(href="/sort/name?order=desc") 中文名稱降序
+          //-     a(href="/sort/name_en?order=asc") 英文名稱A-Z
+          //-     a(href="/sort/name_en?order=desc") 英文名稱Z-A
+          //-     a(href="/sort/rating?order=asc") 評分低到高
+          //-     a(href="/sort/rating?order=desc") 評分高到低
+
+          //- div(class="category-dropdown  ml-4") 依種類篩選
+          //-   div(class="category-dropdown-content")
+          //-     each category in categories
+          //-       a(href=`/filter?category=${category}`) #{category}
          
         
     div(class="row")
